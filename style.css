@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    font-family: Roboto;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    gap: 40px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid ;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.top-buttons button{
+    height: 40px;
+    width: 85px;
+}
+
+.num-pad button{
+    height:40px;
+    width: 40px;
+    background-color: rgb(218, 218, 218);
+    font-size: 24px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding: 10px;
+}
+
+.num-pad{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#clear{
+    background-color: #EE9999;
+    font-size: 16px;
+}
+
+#clear:hover{
+    background-color: #f38b8b;
+}
+
+#clear:active{
+    background-color: #ee9999;
+    transform: translateY(3px);
+}
+
+#backspace{
+    background-color: #99b0ee;
+}
+
+#backspace:hover{
+    background-color: #999aee;
+}
+
+#backspace:active{
+    background-color: #99b0ee;
+    transform: translateY(3px);
+}
+
+button{
+    border-radius: 5px;
+}
+
+.num-pad button:hover{
+    background-color: rgb(158, 157, 157)
+}
+
+.num-pad button:active{
+    background-color: rgb(218, 218, 218);
+    transform: translateY(3px);
+}
+
