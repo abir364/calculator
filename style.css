@@ -24,6 +24,7 @@ body{
     border: 2px solid ;
     border-radius: 5px;
     padding: 5px;
+    padding-top: 10px;
 }
 
 .top-buttons button{
@@ -92,3 +93,19 @@ button{
     transform: translateY(3px);
 }
 
+.display{
+    height: 100px;
+    width: 180px;
+    border: 2px solid;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.display span{
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
