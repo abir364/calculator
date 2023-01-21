@@ -1,45 +1,78 @@
-const display = document.querySelector('.display');
-
 let s='';
-let a='';
-let b='';
+let firstOperand='';
+let secondOperand='';
 let operator='';
+let hasAnsStored = false;
+let answer = '';
+
 const numbers = document.querySelectorAll('#number');
+
 numbers.forEach((number) => {
     number.addEventListener('click', ()=>{
         const top = document.querySelector('.top-line');
-        const line = document.querySelector('.bottom-line');
+        const bottom = document.querySelector('.bottom-line');
+        const operation = document.querySelector('.operation');
         if ((number.innerHTML === '+' || number.innerHTML === '-' || 
             number.innerHTML ==='×' || number.innerHTML === '÷') 
-            && top.innerHTML==='') {
-            a = s;
+            && firstOperand ==='' && !hasAnsStored) {
+            firstOperand = s;
+            bottom.innerHTML = '';
+            top.innerHTML = firstOperand;
             s= '';
             operator = number.innerHTML;
+            operation.innerHTML = operator;
         }
         else if ((number.innerHTML === '+' || number.innerHTML === '-' || 
         number.innerHTML ==='×' || number.innerHTML === '÷') 
-        && top.innerHTML!=='' && a === '') {
-            a = top.innerHTML;
+        && hasAnsStored) {
+            firstOperand = answer;
             operator = number.innerHTML;
+            operation.innerHTML = operator;
+            top.innerHTML = firstOperand;
+            bottom.innerHTML = '';
             s = '';
         }
         else if ((number.innerHTML === '+' || number.innerHTML === '-' || 
         number.innerHTML ==='×' || number.innerHTML === '÷') 
-        && top.innerHTML!=='' && a !== '') {
-            b = s;
-            top.innerHTML = doMath(a,b,operator);
-            line.innerHTML = '';
-            a,b = '';
+        && firstOperand!=='' && s!=='') {
+            secondOperand = s;
+            firstOperand = doMath(firstOperand,secondOperand,operator);
+            top.innerHTML = firstOperand;
+            operator = number.innerHTML;
+            operation.innerHTML = operator;
+            bottom.innerHTML = '';
+            s = '';
         }
         else if (number.innerHTML === '=') {
-            b = s;
-            top.innerHTML = doMath(a,b,operator);
-            line.innerHTML = '';
-            a,b = '';
+            console.log('smt' + firstOperand)
+            secondOperand = s;
+            answer = doMath(firstOperand,secondOperand,operator);
+            hasAnsStored = true;
+            top.innerHTML = answer;
+            bottom.innerHTML = '';
+            operation.innerHTML= '';
+            firstOperand = '';
+            secondOperand = '';
+            s = '';
+            operator = '';
         }
-        else {
+        else if (!hasAnsStored) {
             s += number.innerHTML;
-            line.innerHTML = s;
+            bottom.innerHTML = s;
+        }
+        else if(hasAnsStored && operator ==='') {
+            hasAnsStored = false;
+            answer = '';
+            top.innerHTML = '';
+            s += number.innerHTML;
+            bottom.innerHTML = s;
+        }
+        else if(hasAnsStored && operator !=='') {
+            console.log(bottom.innerHTML);
+            hasAnsStored = false;
+            answer = '';
+            s += number.innerHTML;
+            bottom.innerHTML = s;
         }
     });
 });

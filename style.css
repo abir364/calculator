@@ -108,4 +108,11 @@ button{
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.hasOperation{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
