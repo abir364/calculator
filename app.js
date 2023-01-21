@@ -43,8 +43,7 @@ numbers.forEach((number) => {
             bottom.innerHTML = '';
             s = '';
         }
-        else if (number.innerHTML === '=') {
-            console.log('smt' + firstOperand)
+        else if (number.innerHTML === '=' && firstOperand !== '' && operator !== '') {
             secondOperand = s;
             answer = doMath(firstOperand,secondOperand,operator).toString();
             hasAnsStored = true;
@@ -56,7 +55,7 @@ numbers.forEach((number) => {
             s = '';
             operator = '';
         }
-        else if (!hasAnsStored) {
+        else if (!hasAnsStored && number.innerHTML !== '=') {
             s += number.innerHTML;
             bottom.innerHTML = s;
         }
@@ -74,6 +73,17 @@ numbers.forEach((number) => {
             s += number.innerHTML;
             bottom.innerHTML = s;
         }
+        else if (number.innerHTML === '=' && firstOperand === '' &&  operator === '') {
+            alert("Enter number before proceeding");
+        }
+        /*else if (number.innerHTML === '=' && firstOperand !== '' 
+        && operator !== '' && s ==='' && secondOperand === '') {
+            alert("Enter number before proceeding"); 
+            //this condition is checks bugs i.e '4+='
+        }
+        else if (number.innerHTML === '=' && top.innerHTML === NaN) {
+            //block operations on NaN values
+        }*/
     });
 });
 
