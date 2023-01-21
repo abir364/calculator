@@ -36,7 +36,7 @@ numbers.forEach((number) => {
         number.innerHTML ==='×' || number.innerHTML === '÷') 
         && firstOperand!=='' && s!=='') {
             secondOperand = s;
-            firstOperand = doMath(firstOperand,secondOperand,operator);
+            firstOperand = doMath(firstOperand,secondOperand,operator).toString();
             top.innerHTML = firstOperand;
             operator = number.innerHTML;
             operation.innerHTML = operator;
@@ -46,7 +46,7 @@ numbers.forEach((number) => {
         else if (number.innerHTML === '=') {
             console.log('smt' + firstOperand)
             secondOperand = s;
-            answer = doMath(firstOperand,secondOperand,operator);
+            answer = doMath(firstOperand,secondOperand,operator).toString();
             hasAnsStored = true;
             top.innerHTML = answer;
             bottom.innerHTML = '';
