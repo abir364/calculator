@@ -53,29 +53,29 @@ body{
     gap: 5px;
 }
 
-#clear{
+.clear{
     background-color: #EE9999;
     font-size: 16px;
 }
 
-#clear:hover{
+.clear:hover{
     background-color: #f38b8b;
 }
 
-#clear:active{
+.clear:active{
     background-color: #ee9999;
     transform: translateY(3px);
 }
 
-#backspace{
+.backspace{
     background-color: #99b0ee;
 }
 
-#backspace:hover{
+.backspace:hover{
     background-color: #999aee;
 }
 
-#backspace:active{
+.backspace:active{
     background-color: #99b0ee;
     transform: translateY(3px);
 }
@@ -109,6 +109,71 @@ button{
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
+}
+
+.num-pad .plus {
+    background-color: aquamarine;
+}
+
+.num-pad .plus:hover{
+    background-color: rgb(108, 216, 180);
+}
+
+.num-pad .plus:active{
+    background-color: aquamarine;
+    transform: translateY(3px);
+}
+
+.num-pad .minus {
+    background-color: tomato;
+}
+
+.num-pad .minus:hover{
+    background-color: rgb(236, 90, 64);
+}
+
+.num-pad .minus:active{
+    background-color: tomato;
+    transform: translateY(3px);
+}
+
+.num-pad .multiply {
+    background-color: goldenrod;
+}
+
+.num-pad .multiply:hover{
+    background-color: rgb(201, 152, 30);
+}
+
+.num-pad .multiply:active{
+    background-color: goldenrod;
+    transform: translateY(3px);
+}
+
+.num-pad .divide {
+    background-color: plum;
+}
+
+.num-pad .divide:hover{
+    background-color: rgb(190, 138, 190);
+}
+
+.num-pad .divide:active{
+    background-color: plum;
+    transform: translateY(3px);
+}
+
+.num-pad .equals {
+    background-color: hotpink;
+}
+
+.num-pad .equals:hover{
+    background-color: rgb(247, 95, 171);
+}
+
+.num-pad .equals:active{
+    background-color: hotpink;
+    transform: translateY(3px);
 }
 
 .hasOperation{
