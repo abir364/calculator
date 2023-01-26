@@ -115,6 +115,8 @@ numbers.forEach((number) => {
         && operator !== '' && secondOperand === '') {
             alert("Enter number before proceeding");
         }
+        //do some work so -x (+,-,*,/) y = is possible
+        
     });
 });
 
